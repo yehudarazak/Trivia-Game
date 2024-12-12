@@ -13,9 +13,7 @@ def main_game():
     while GAME_ON:
         
         while len(GAME_QUESTIONS) > 0:
-            random_question_and_answer = random.choice(list(GAME_QUESTIONS.items()))
-            
-            question, correct_answer = random_question_and_answer
+            question, correct_answer = random_question_and_answer()
             user_answer = input(f"""{question} (type "exit" to exit the game)""").lower()
 
             if user_answer == "exit":
@@ -37,13 +35,6 @@ def main_game():
             break
             
     print(f"you got {USER_SCORE} answers correct")
-    # play_again = input("do you want to play again? (yes/no)\n").strip().lower()
-    # if play_again != "yes":
-    #     print("thanks for playing!")
-    #     GAME_ON = False
-    # else:
-    #     GAME_ON = True
-
 
 if __name__ == "__main__":
     main_game()
