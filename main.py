@@ -4,6 +4,10 @@ from constants import *
 
 print("welcome to trivia master!!!")
 
+ask_if_playing = input("do you want to play? (yes/no)").strip().lower()
+if ask_if_playing == "yes":
+    GAME_ON = True
+
 def main_game():
     global USER_SCORE, GAME_ON
     while GAME_ON:
